@@ -1,0 +1,27 @@
+{
+  "name": "apprentice_220820",
+  "version": "1.0.0",
+  "description": "A new Flutter project.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asahaya/apprentice_220820.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asahaya/apprentice_220820/issues"
+  },
+  "homepage": "https://github.com/asahaya/apprentice_220820#readme",
+  "dependencies": {
+    "zenn-cli": "^0.1.117"
+  }
+}
