@@ -49,17 +49,23 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
       ),
       body: SafeArea(
-        // TODO: Replace child: Container()
-        //4_
         child: ListView.builder(
-            //5_
             itemCount: Recipe_Data.samples.length,
-            //6_
             itemBuilder: (BuildContext context, int index) {
-              //7_
-              // TODO: Update to return Recipe card
               // TODO: Add GestureDetector
-              return buildRecipeCard(Recipe_Data.samples[index]);
+              //7
+              return GestureDetector(
+                  //8
+                  onTap: () {
+                    //9
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      // 10
+                      // TODO: Replace return with return RecipeDetail()
+                      return Text('Datail Page');
+                    }));
+                  },
+                  child: buildRecipeCard(Recipe_Data.samples[index]));
             }),
       ),
     );
