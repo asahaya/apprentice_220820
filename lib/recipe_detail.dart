@@ -56,8 +56,9 @@ class _RecipeDatailState extends State<RecipeDatail> {
                       final ingredient = widget.recipe.ingredients[index];
                       //9
                       // TODO: Add ingredient.quantity
-                      return Text(
-                          '${ingredient.quantity} ${ingredient.measure}${ingredient.name}');
+                      return Text('${ingredient.quantity * _sliderVal} '
+                          '${ingredient.measure} '
+                          '${ingredient.name}');
                     })),
             // TODO: Add Slider() here
             Slider(
