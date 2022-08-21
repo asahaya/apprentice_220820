@@ -42,10 +42,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    //1_Scaffoldは画面の上位構造
     return Scaffold(
+      //2_MyApp()から渡されたtitleプロパティを取得
       appBar: AppBar(
         title: Text(widget.title),
         centerTitle: true,
+      ),
+      //3_SafeAreaで上部のノッチ部分などに画面が掛からないように設定
+      body: SafeArea(
+        // TODO: Replace child: Container()
+        //4_
+        child: Container(
+          color: Colors.amber,
+        ),
       ),
     );
   }
