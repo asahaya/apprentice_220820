@@ -1,4 +1,5 @@
 import 'package:apprentice_220820/recipe.dart';
+import 'package:apprentice_220820/recipe_detail.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -62,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         MaterialPageRoute(builder: (context) {
                       // 10
                       // TODO: Replace return with return RecipeDetail()
-                      return Text('Datail Page');
+                      return RecipeDatail(recipe: Recipe_Data.samples[index]);
                     }));
                   },
                   child: buildRecipeCard(Recipe_Data.samples[index]));
