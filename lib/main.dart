@@ -1,3 +1,4 @@
+import 'package:apprentice_220820/recipe.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -42,20 +43,39 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    //1_Scaffoldは画面の上位構造
     return Scaffold(
-      //2_MyApp()から渡されたtitleプロパティを取得
       appBar: AppBar(
         title: Text(widget.title),
         centerTitle: true,
       ),
-      //3_SafeAreaで上部のノッチ部分などに画面が掛からないように設定
       body: SafeArea(
         // TODO: Replace child: Container()
         //4_
-        child: Container(
-          color: Colors.amber,
-        ),
+        child: ListView.builder(
+            //5_
+            itemCount: Recipe_Data.samples.length,
+            //6_
+            itemBuilder: (BuildContext context, int index) {
+              //7_
+              // TODO: Update to return Recipe card
+              return buildRecipeCard(Recipe_Data.samples[index]);
+            }),
+      ),
+    );
+  }
+
+  Widget buildRecipeCard(Recipe_Data recipe_data) {
+    //1
+    return Card(
+      //2
+      child: Column(
+        //3
+        children: [
+          //4
+          Image(image: AssetImage(recipe_data.imageURL)),
+          //5
+          Text(recipe_data.label),
+        ],
       ),
     );
   }
