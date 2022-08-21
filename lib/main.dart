@@ -58,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
             itemBuilder: (BuildContext context, int index) {
               //7_
               // TODO: Update to return Recipe card
+              // TODO: Add GestureDetector
               return buildRecipeCard(Recipe_Data.samples[index]);
             }),
       ),
@@ -65,17 +66,32 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget buildRecipeCard(Recipe_Data recipe_data) {
-    //1
     return Card(
+      //1
+      elevation: 2.0,
       //2
-      child: Column(
-        //3
-        children: [
-          //4
-          Image(image: AssetImage(recipe_data.imageURL)),
-          //5
-          Text(recipe_data.label),
-        ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      //3
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        //4
+        child: Column(
+          children: [
+            Image(image: AssetImage(recipe_data.imageURL)),
+            //5
+            const SizedBox(height: 14.0),
+            //6
+            Text(
+              recipe_data.label,
+              style: const TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Palatino'),
+            ),
+          ],
+        ),
       ),
     );
   }
